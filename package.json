@@ -1,0 +1,16 @@
+{
+  "name": "jonas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "c3data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node c3data.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^3.10.1",
+    "moment": "^2.10.6"
+  }
+}
