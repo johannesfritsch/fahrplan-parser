@@ -3,7 +3,7 @@ var moment = require('moment');
 
 var data = require('./data.json');
 
-var now = new Date("2014-12-27 20:30:00");
+var now = new Date("2014-12-27 20:29:00");
 
 var currentDay = _.filter(data.schedule.conference.days, function(day){ return moment(now).isBetween(day.day_start, day.day_end); })[0];
 
@@ -23,8 +23,8 @@ var upcomingEventsOfTheDay = _.take(_.filter(eventsOfTheDay, function(e){
 console.log('NOW: ' + now);
 console.log('');
 console.log('EVENTS OF THE DAY:');
-console.log(_.map(eventsOfTheDay, function(e){ return '- ' + e.title }).join("\n"));
+console.log(_.map(eventsOfTheDay, function(e){ return '- ' + e.title + ' ('+ moment(e.date).format('H:mm') +')' }).join("\n"));
 console.log('');
 console.log('TWO NEXT UPCOMING EVENTS OF THE DAY:');
-console.log(_.map(upcomingEventsOfTheDay, function(e){ return '- ' + e.title }).join("\n"));
+console.log(_.map(upcomingEventsOfTheDay, function(e){ return '- ' + e.title + ' ('+ moment(e.date).format('H:mm') +')' }).join("\n"));
 console.log('');
